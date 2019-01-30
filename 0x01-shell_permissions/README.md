@@ -1,0 +1,1 @@
+permisions comands in linux
