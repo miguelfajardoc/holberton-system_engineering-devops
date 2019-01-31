@@ -1,5 +1,4 @@
 #!/bin/bash
-./" holberton man page
 .TH man 1 "04 May 2015" "0.32" "holberton"
 .SH NAME
 holberton - become a full-stack software engineer.
