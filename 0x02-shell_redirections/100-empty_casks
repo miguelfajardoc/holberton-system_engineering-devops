@@ -1,2 +1,2 @@
 #!/bin/bash
-find -type f -empty | rev | cut  -d '/' -f '-1' |rev
+find -name "*" -type f -empty | rev | cut  -d '/' -f '-1' |rev
