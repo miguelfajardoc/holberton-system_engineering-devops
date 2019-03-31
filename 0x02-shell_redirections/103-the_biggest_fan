@@ -1,2 +1,2 @@
 #!/bin/bash
-sort | cut  -f 1 | uniq -c | sort -n -r | head -11 | cut -b 5-8 --complement
+sort | cut  -f 1 | uniq -c | sort -n -r | head -11 | rev | cut -d ' ' -f 1 | rev
