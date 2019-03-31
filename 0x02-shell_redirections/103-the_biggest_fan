@@ -1,1 +1,2 @@
+#!/bin/bash
 sort | cut  -f 1 | uniq -c | sort -n -r | head -11 | cut -b 9-30
