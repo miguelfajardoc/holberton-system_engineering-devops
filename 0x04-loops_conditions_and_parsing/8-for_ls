@@ -3,5 +3,5 @@
 PATHOS=$(ls)
 for file in $PATHOS
 do
-    echo $file | cut -d- -f2
+    echo "$file" | cut -d- -f2
 done
