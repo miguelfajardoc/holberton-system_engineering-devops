@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script is displaying "Holberton School" 10 times with hi in 9
+PATHOS=$(ls)
+for file in $PATHOS
+do
+    echo $file | cut -d- -f2
+done
