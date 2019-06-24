@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# this script show the actual own PID
+PS=$(ps)
+x=0
+for ps in $PS
+do
+    if [ $x -eq 1 ]
+    then
+	echo "$ps"
+	x=0
+    fi
+    if [ "$ps" = "bash" ]
+    then
+	x=1
+    fi
+done
