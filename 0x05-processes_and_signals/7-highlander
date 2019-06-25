@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# this script show you bash made easy
+trap go SIGTERM
+go()
+{
+    echo "I am invincible!!!"
+}
+while ((1))
+do
+
+    echo "To infinity and beyond"
+    sleep 2
+done
