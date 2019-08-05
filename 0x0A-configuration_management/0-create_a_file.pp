@@ -1,3 +1,4 @@
+# create file
 file { '/tmp/holberton':
   ensure  => file,
   mode    => '0744',
