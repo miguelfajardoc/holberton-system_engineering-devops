@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This script create a private key holberton
+ssh-keygen -t rsa -b 4096 -f holberton -N 'betty'
