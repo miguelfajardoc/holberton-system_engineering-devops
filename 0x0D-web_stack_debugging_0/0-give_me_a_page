@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# get Apache into the docker runinig it
+service apache2 start
