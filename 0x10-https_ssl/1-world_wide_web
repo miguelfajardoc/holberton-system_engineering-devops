@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# thi script show where point a subdomain
+
+get_dig()
+{
+    echo "The subdomain $2 is a"
+    dig $1 | grep -A1 'ANSWER SECTION:' | awk '{"$4" record and points to "$5"}'
+}
+
+if [[ "$#" -lt 1 ]]
+then
+    echo "no arguments provided"
+    exit 1
+fi
+
+if [[ "$2" -eq "" ]]
+then
+    declare -a subdomains
+    subdomains[0]="www"
+    subdomains[1]="lb-01"
+    subdomains[2]="web-01"
+    subdomains[3]="web-02"
+
+fi
+
+
+get_dig "$2.$1" "$2"
