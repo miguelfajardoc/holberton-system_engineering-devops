@@ -3,25 +3,23 @@
 
 get_dig()
 {
-    echo "The subdomain $2 is a"
-    dig $1 | grep -A1 'ANSWER SECTION:' | awk '{"$4" record and points to "$5"}'
+    echo -n "The subdomain $2 is a "
+    dig "$1" | grep -A1 'ANSWER SECTION:' | awk '{if (NF >= 5 ) print $4 " record and points to " $5}'
 }
 
-if [[ "$#" -lt 1 ]]
+if [[ "$#" -eq "2" ]]
 then
-    echo "no arguments provided"
-    exit 1
-fi
+    get_dig "$2.$1" "$2"
 
-if [[ "$2" -eq "" ]]
-then
+else
     declare -a subdomains
     subdomains[0]="www"
     subdomains[1]="lb-01"
     subdomains[2]="web-01"
     subdomains[3]="web-02"
 
+    for i in "${subdomains[@]}"
+    do
+	get_dig "$i.$1" "$i"
+    done
 fi
-
-
-get_dig "$2.$1" "$2"
