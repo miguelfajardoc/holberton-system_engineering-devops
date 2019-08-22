@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This script allows to conect to a remote holberton server
+ssh -i ~/.ssh/holberton ubuntu@35.229.39.180
