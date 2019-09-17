@@ -22,6 +22,6 @@ if __name__ == "__main__":
             tasks.append(t["title"])
 
     print("Employee {} is done with tasks({:d}/{:d}):".format(user["name"],
-                                                             done, total))
+                                                              done, total))
     for t in tasks:
         print("\t {}".format(t))
