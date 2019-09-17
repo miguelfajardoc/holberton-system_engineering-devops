@@ -16,5 +16,5 @@ if __name__ == "__main__":
         csvFile = csv.writer(csvFile, delimiter=',', quoting=csv.QUOTE_ALL)
 
         for t in task:
-            csvFile.writerow([argv[1], user["name"], t["completed"],
+            csvFile.writerow([argv[1], user["username"], t["completed"],
                               t["title"]])
