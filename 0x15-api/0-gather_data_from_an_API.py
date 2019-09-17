@@ -5,9 +5,9 @@ if __name__ == "__main__":
     from requests import get
     from sys import argv
 
-
     user = get("https://jsonplaceholder.typicode.com/users/{}".format(argv[1]))
-    task = get("https://jsonplaceholder.typicode.com/todos/", params={'userId': argv[1]})
+    task = get("https://jsonplaceholder.typicode.com/todos/",
+               params={'userId': argv[1]})
     user = user.json()
     task = task.json()
 
@@ -21,7 +21,7 @@ if __name__ == "__main__":
             done += 1
             tasks.append(t["title"])
 
-    print("Employee {} is done with task({:d}/{:d})".format(user["name"],
-                                                            done, total))
+    print("Employee {} is done with task({:d}/{:d}):".format(user["name"],
+                                                             done, total))
     for t in tasks:
         print("\t{}".format(t))
