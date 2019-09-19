@@ -7,9 +7,10 @@ def recurse(subreddit, hot_list=[]):
     """ print the first 10 hot topics in a subreddit """
 
     next = {'after': None}
-    hot_list = []
 
     recurse_param(subreddit, next, hot_list)
+    if len(hot_list) is 0:
+        return None
     return hot_list
 
 
@@ -24,8 +25,7 @@ def recurse_param(subreddit, next, hot_list):
     try:
         req = req.json()
     except:
-        print(None)
-        return
+        return(None)
     if "data" in req and "children" in req.get("data"):
         children = req.get("data").get("children")
         for child in children:
@@ -36,5 +36,4 @@ def recurse_param(subreddit, next, hot_list):
             next["after"] = req.get("data").get("after")
             hot_list = recurse_param(subreddit, next, hot_list)
     else:
-        print(None)
-        return
+        return(None)
