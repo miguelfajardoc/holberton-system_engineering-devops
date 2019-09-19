@@ -14,9 +14,9 @@ def top_ten(subreddit):
     i = 0
     try:
         req = req.json()
-#        print(req)
     except:
-        return 0
+        print(None)
+        return
     if "data" in req:
         children = req.get("data").get("children")
         for child in children:
@@ -25,4 +25,5 @@ def top_ten(subreddit):
             print(child.get("data").get("title"))
             i += 1
     else:
-        return 0
+        print(None)
+        return
