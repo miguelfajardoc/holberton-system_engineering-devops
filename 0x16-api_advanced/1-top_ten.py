@@ -17,7 +17,7 @@ def top_ten(subreddit):
     except:
         print(None)
         return
-    if "data" in req:
+    if "data" in req and "children" in req.get("data"):
         children = req.get("data").get("children")
         for child in children:
             if i == 9:
