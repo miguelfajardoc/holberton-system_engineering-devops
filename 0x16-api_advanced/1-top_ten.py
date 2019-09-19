@@ -7,9 +7,9 @@ def top_ten(subreddit):
     """ print the first 10 hot topics in a subreddit """
 
     headers = {'User-Agent': 'miky116'}
-
+    load = {'limit': 10}
     req = get("https://www.reddit.com/r/{}/hot.json".format(subreddit),
-              headers=headers, allow_redirects=False)
+              headers=headers, params=load, allow_redirects=False)
     children = {}
     i = 0
     try:
@@ -20,10 +20,7 @@ def top_ten(subreddit):
     if "data" in req and "children" in req.get("data"):
         children = req.get("data").get("children")
         for child in children:
-            if i == 9:
-                break
             print(child.get("data").get("title"))
-            i += 1
     else:
         print(None)
         return
