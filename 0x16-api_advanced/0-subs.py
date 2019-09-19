@@ -2,12 +2,14 @@
 
 from requests import get
 
+
 def number_of_subscribers(subreddit):
     """ return the number of subscribers in a subreddit """
 
     headers = {'User-Agent': 'miky116'}
 
-    req = get("https://www.reddit.com/r/{}/about.json".format(subreddit), headers=headers, allow_redirects=False)
+    req = get("https://www.reddit.com/r/{}/about.json".format(subreddit),
+              headers=headers, allow_redirects=False)
     dat = {}
     try:
         req = req.json()
