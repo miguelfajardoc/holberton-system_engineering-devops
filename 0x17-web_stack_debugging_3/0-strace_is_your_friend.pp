@@ -5,8 +5,8 @@ file { '/var/www/html/wp-settings.php':
 }
 
 file_line { 'fix':
-  path  => '/var/www/html/wp-settings.php',
-  line  => 'require_once( ABSPATH . WPINC . \'/class-wp-locale.php\' );',
-  match => '^*.phpp*',
+  path     => '/var/www/html/wp-settings.php',
+  line     => 'require_once( ABSPATH . WPINC . \'/class-wp-locale.php\' );',
+  match    => '^*.phpp*',
   multiple => true,
 }
