@@ -7,5 +7,6 @@ file { '/var/www/html/wp-settings.php':
 file_line { 'fix':
   path  => '/var/www/html/wp-settings.php',
   line  => 'require_once( ABSPATH . WPINC . \'/class-wp-locale.php\' );',
-  match => '^*class-wp-locale.phpp*',
+  match => '^*.phpp*',
+  multiple => true,
 }
